@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "27049825441",
+    "project_id": "reciview",
+    "storage_bucket": "reciview.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:27049825441:android:0a1960ef23e9137e6d0ce0",
+        "android_client_info": {
+          "package_name": "com.example.reciview"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "27049825441-o7u5lbniec223oltafan3mfec0v90v13.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDj0n9iIy-tM_obaYG3LsTM8qt7jynZtKk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "27049825441-o7u5lbniec223oltafan3mfec0v90v13.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
