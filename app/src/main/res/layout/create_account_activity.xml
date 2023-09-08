@@ -116,11 +116,12 @@
     </LinearLayout>
 
     <Button
+        android:id="@+id/button_create_account"
         android:layout_width="match_parent"
         android:layout_height="62dp"
-        android:text="@string/create_account">
+        android:text="@string/create_account" />
 
-    </Button>
+
 
 
 </com.google.android.material.textfield.TextInputLayout>

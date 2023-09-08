@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+//TODO: Change app startup logo from Android to Reciview logo.
 public class MainActivity extends AppCompatActivity {
 
     @Override
