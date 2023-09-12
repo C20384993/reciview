@@ -2,6 +2,7 @@ package com.example.reciview;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -42,7 +43,6 @@ public class RegisterAccount extends AppCompatActivity {
         newConfirmPassword = findViewById(R.id.editText_passwordConfirm_register);
         btnCreateAccount = findViewById(R.id.button_create_account);
 
-        //TODO: Stop db from deleting old account when new one is made.
         //Add new user to db.
         btnCreateAccount.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,9 +50,12 @@ public class RegisterAccount extends AppCompatActivity {
 
                 //Call the root node of the db.
                 rootNode = FirebaseDatabase.getInstance();
+                //Instructs the app to store accounts in this path.
                 dbRef1 = rootNode.getReference("accounts");
 
                 //Store the values from the text fields.
+                //TODO: Checks for proper formatting of email, phone num, etc. Should be part of xml
+                // already.
                 String phonenum = newPhoneNum.getEditText().getText().toString();
                 String email = newEmailAddress.getEditText().getText().toString();
                 String username = newUsername.getEditText().getText().toString();
@@ -75,7 +78,15 @@ public class RegisterAccount extends AppCompatActivity {
                 //Else, create account by adding to db.
                 else{
                     Account userAccount = new Account(phonenum, email, username, password);
-                    dbRef1.setValue(userAccount);
+                    //The .child() value will determine how the account is identified.
+                    //11/9/23: Currently using "username" as account ID.
+                    //TODO: Check username is unique/not in db already.
+                    dbRef1.child(username).setValue(userAccount);
+                    Toast.makeText(RegisterAccount.this,
+                            "Registration successful.", Toast.LENGTH_SHORT).show();
+                    //return;
+                    startActivity(new Intent(RegisterAccount.this,
+                            MainActivity.class));
                 }//end else
 
             }

@@ -1,23 +1,23 @@
 package com.example.reciview;
 
-import android.os.Bundle;
-import android.widget.Button;
-import android.widget.ImageButton;
-
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.widget.TextView;
 
 public class HomeScreen extends AppCompatActivity {
 
-    protected void OnCreate(Bundle savedInstanceState) {
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home_screen);
 
-        //Locate buttons for the activity
-        Button btnRecipePosts = findViewById(R.id.button_posts_link);
-        ImageButton btnAvatarImg = findViewById(R.id.imagebtn_avatar);
-        ImageButton btnRotdImg = findViewById(R.id.imagebtn_rotd_voting_link);
+        //Retrieve the intent.
+        Intent signInIntent = getIntent();
 
-
-
+        TextView textview2 = findViewById(R.id.textView2);
+        textview2.setText(signInIntent.getStringExtra("username"));
     }
 }
