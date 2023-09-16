@@ -38,7 +38,9 @@
             android:id="@+id/editText_phonenum"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Phone Number">
+            android:hint="Phone Number"
+            app:counterEnabled="true"
+            app:counterMaxLength="10">
 
 
             <com.google.android.material.textfield.TextInputEditText
@@ -70,7 +72,7 @@
             android:layout_marginTop="20dp"
             android:hint="Username"
             app:counterEnabled="true"
-            app:counterMaxLength="18">
+            app:counterMaxLength="14">
 
 
             <com.google.android.material.textfield.TextInputEditText
@@ -86,7 +88,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:hint="Password"
-            app:passwordToggleEnabled="true">
+            app:passwordToggleEnabled="true"
+            app:counterEnabled="true"
+            app:counterMaxLength="15">
 
 
             <com.google.android.material.textfield.TextInputEditText
@@ -102,8 +106,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:hint="Confirm Password"
-            app:passwordToggleEnabled="true"
-            app:counterEnabled="true">
+            app:passwordToggleEnabled="true">
 
 
             <com.google.android.material.textfield.TextInputEditText

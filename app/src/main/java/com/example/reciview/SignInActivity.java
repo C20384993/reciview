@@ -19,6 +19,8 @@ import com.google.firebase.database.ValueEventListener;
 
 public class SignInActivity extends AppCompatActivity {
 
+    //TODO: Add return to main screen button.
+    //TODO: Improve visuals.
     private Button btnLogin;
     private EditText textUsername;
     private EditText textPassword;
@@ -60,7 +62,7 @@ public class SignInActivity extends AppCompatActivity {
                         //Check if there is actually data inside the snapshot and retrieve it.
                         if(snapshot.exists()){
                             //Retrieve from the snapshot the password of the account that matched
-                            //with the email entered by the user.
+                            //with the username entered by the user.
                             String accountDBPassword = snapshot.child(enteredUsername).
                                     child("password").getValue(String.class);
 
@@ -79,7 +81,9 @@ public class SignInActivity extends AppCompatActivity {
                                         child("phonenum").getValue(String.class);
 
                                 //Start homepage activity and pass account info into intent.
-                                Intent intentHomescreen = new Intent(getApplicationContext(), HomeScreen.class);
+                                Intent intentHomescreen = new Intent(getApplicationContext(),
+                                        HomeScreen.class);
+
                                 intentHomescreen.putExtra("username",accountDBUsername);
                                 intentHomescreen.putExtra("password",accountDBPassword);
                                 intentHomescreen.putExtra("emailAddress",accountDBEmail);
@@ -99,7 +103,8 @@ public class SignInActivity extends AppCompatActivity {
                         //Else, no data in snapshot so can't check. User doesn't exist.
                         else{
                             Toast.makeText(SignInActivity.this,
-                                    "Error retrieving data, no such user.", Toast.LENGTH_SHORT).show();
+                                    "Error retrieving data, no such user.",
+                                    Toast.LENGTH_SHORT).show();
                             return;
                         }//end else
 
